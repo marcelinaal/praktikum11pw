@@ -1,0 +1,25 @@
+<h2>Menghitung Kurs Rupiah ke Dollar</h2>
+
+    <label for="rupiah">Masukkan nominal uang Rupiah:</label>
+    <input type="number" id="rupiah" placeholder="Masukkan disini">
+
+    <button onclick="konversi()">Konversi</button>
+
+    <div id="result"></div>
+
+    <script>
+        function konversi() {
+            var kursDollar = 14650;
+            var jumlahRupiah = parseFloat(document.getElementById("rupiah").value);
+
+            if (isNaN(jumlahRupiah)) {
+                alert("Masukkan angka yang valid untuk jumlah uang rupiah!");
+                return;
+            }
+
+            var jumlahDollar = jumlahRupiah / kursDollar;
+
+            var resultMessage = "Jumlah Dollar: $" + jumlahDollar.toFixed(2);
+            document.getElementById("result").innerHTML = resultMessage;
+        }
+    </script>
